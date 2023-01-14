@@ -31,6 +31,5 @@ span.logos > a > span {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  background-color: hsl(var(--p) / var(--tw-bg-opacity));
+  width: 1px;
 }
