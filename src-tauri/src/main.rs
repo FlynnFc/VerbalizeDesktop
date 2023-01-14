@@ -10,8 +10,8 @@ fn greet(name: &str) -> String {
 }
 
 #[tauri::command]
-fn test() -> String {
-    format!("Hi I was activated from JS!")
+fn test(test: &str) -> String {
+    format!("Hi this is a {} from JS!", test)
 }
 
 fn main() {
