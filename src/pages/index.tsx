@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
-import ServerBar from "../components/ServerBar";
+import ServerBar from "../components/ServerBar/ServerBar";
 import Image from "next/image";
 import reactLogo from "../assets/react.svg";
 import tauriLogo from "../assets/tauri.svg";
@@ -9,7 +9,7 @@ import nextLogo from "../assets/next.svg";
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
-  const [test, setTest] = useState("Im a noncey");
+  const [test, setTest] = useState("Testing");
   const [testMsg, setTestMsg] = useState("");
 
   async function greet() {
@@ -81,23 +81,6 @@ function App() {
         </div>
 
         <p>{greetMsg}</p>
-        <ul className="flex flex-col space-y-2 mt-2">
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-          <li className="btn btn-circle  w-16 h-16"></li>
-        </ul>
       </div>
     </main>
   );
