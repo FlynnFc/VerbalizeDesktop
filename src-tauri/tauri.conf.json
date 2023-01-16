@@ -60,10 +60,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height":860,
         "resizable": true,
-        "title": "my-tauri-app",
-        "width": 800
+        "title": "Teamcord",
+        "width": 1100
       }
     ]
   }
