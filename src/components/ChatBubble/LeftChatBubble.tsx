@@ -1,6 +1,14 @@
 import React from "react";
 
-const LeftChatBubble = () => {
+type messageProps = {
+  message: string;
+  status: string;
+  img: string;
+  name: string;
+  timeSent: Date;
+};
+
+const LeftChatBubble = (props: messageProps) => {
   return (
     <>
       <div className="chat chat-start">
@@ -10,7 +18,7 @@ const LeftChatBubble = () => {
           </div>
         </div>
         <div className="chat-header">
-          Obi-Wan Kenobi
+          Obi-Wan
           <time className="text-xs opacity-50">12:45</time>
         </div>
         <div className="chat-bubble">You were the Chosen One!</div>
