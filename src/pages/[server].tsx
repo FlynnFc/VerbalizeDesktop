@@ -16,7 +16,7 @@ const MainPage = () => {
       </section>
       <section className="bg-base-200 containerBody flex justify-end flex-col">
         <div className="overflow-y-auto px-3">
-          <h2 className="text-4xl text-center font-bold border-b pb-4">
+          <h2 className="text-3xl text-center font-bold border-b pb-3 mb-2">
             Beginning of chat
           </h2>
           <ul>
@@ -83,9 +83,13 @@ const MainPage = () => {
               placeholder="message"
               className="bg-transparent shadow-none w-full"
             />
-            <span className="text-2xl">
+            <motion.span
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              className="text-2xl"
+            >
               <AiOutlineSend />
-            </span>
+            </motion.span>
           </div>
         </div>
       </section>
