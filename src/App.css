@@ -19,12 +19,12 @@
   position: fixed;
   top: 2.5rem;
   overflow-y: scroll;
-  width: 14rem /* 224px */;
+  width: 16rem /* 224px */;
   --tw-bg-opacity: 1;
   background-color: hsl(var(--b3, var(--b2)) / var(--tw-bg-opacity));
 }
 .containerBody {
-  width: calc(100vw - (6rem + 14rem));
+  width: calc(100vw - (6rem + 16rem));
   height: calc(100vh - 2.5rem);
   position: absolute;
   top: 2.5rem;
