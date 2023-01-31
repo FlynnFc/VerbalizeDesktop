@@ -63,7 +63,9 @@
         "height":860,
         "resizable": true,
         "title": "Teamcord",
-        "width": 1100
+        "width": 1100,
+        "minWidth": 900,
+        "minHeight": 400
       }
     ]
   }
