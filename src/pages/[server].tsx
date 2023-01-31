@@ -10,7 +10,7 @@ const MainPage = () => {
   return (
     <div className="max-w-screen overflow-hidden flex flex-col z-0">
       <ServerNav serverName={query.server} />
-      <section>
+      <section className="containerSideNav flex flex-col justify-between">
         <Channels />
       </section>
       <section className="bg-base-200 containerBody flex justify-end flex-col">
