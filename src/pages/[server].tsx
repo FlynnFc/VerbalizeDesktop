@@ -4,6 +4,7 @@ import Channels from "../components/Channels/Channels";
 import LeftChatBubble from "../components/ChatBubble/LeftChatBubble";
 import RightChatBubble from "../components/ChatBubble/RightChatBubble";
 import { AiOutlineSend } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const MainPage = () => {
   const { query } = useRouter();
@@ -100,13 +101,13 @@ const ServerNav = (props: { serverName: string | string[] }) => {
       <div className="dropdown flex w-56 bg-base-100  text-base-content">
         <label
           tabIndex={0}
-          className="p-2 select-none text-lg text-center w-full cursor-pointer hover:bg-[#acaaaa23]"
+          className="p-2 m-1 mx-2 rounded-lg flex justify-center items-center select-none text-lg text-center w-full cursor-pointer hover:bg-[#acaaaa23]"
         >
           {props.serverName}
         </label>
         <ul
           tabIndex={0}
-          className="dropdown-content menu p-2 shadow bg-base-100 rounded box w-52 mt-12 m-2"
+          className="dropdown-content menu p-2 shadow bg-base-100 rounded-lg box w-52 mt-12 m-2 justify-center"
         >
           <li className="menu-title elect-none">
             <span>Server settings</span>
@@ -123,9 +124,13 @@ const ServerNav = (props: { serverName: string | string[] }) => {
           <li className="px-4 cursor-pointer text-base-content py-2 hover:bg-[#acaaaa23] rounded leading-normal">
             Item 1
           </li>
-          <span className="bg-error cursor-pointer mt-1 shadow rounded font-bold text-center text-base-content p-1">
+          <motion.span
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1 }}
+            className="bg-error cursor-pointer mt-1 shadow m-auto rounded font-bold text-center text-base-content p-1 w-[90%]"
+          >
             Leave server
-          </span>
+          </motion.span>
         </ul>
       </div>
       <div className="flex items-center w-52">
