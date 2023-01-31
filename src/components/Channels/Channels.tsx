@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { HiOutlineHashtag } from "react-icons/hi";
-import { MdKeyboardVoice, MdSettingsInputComponent } from "react-icons/md";
-import { BsHeadphones } from "react-icons/bs";
+import { MdOutlineSettings } from "react-icons/md";
 import {
   TbMicrophone,
   TbMicrophoneOff,
@@ -15,6 +14,9 @@ export const MyComponent = () => (
 );
 
 const Channels = () => {
+  const [userStatus, setUserStatus] = useState<"online" | "hidden" | "away">(
+    "away"
+  );
   const [voiceMuted, setVoiceMuted] = useState(false);
   const [soundMuted, setSoundMuted] = useState(false);
   function toggleVoiceMute() {
@@ -25,6 +27,16 @@ const Channels = () => {
     setSoundMuted((prev) => !prev);
     console.log("Toggling sound mute", voiceMuted);
   }
+  function displayUserInfo() {
+    //Displays details about user
+    //Name, change status, logout,
+  }
+
+  const adjustedStatus = useMemo(() => {
+    if (userStatus === "online") return "green-500";
+    else if (userStatus === "hidden") return "base-300";
+    else return "yellow-400";
+  }, [userStatus]);
 
   return (
     <>
@@ -34,15 +46,23 @@ const Channels = () => {
           <span>test</span>
         </li>
         <li className="flex items-center space-x-2 text-xl w-full font-semibold text-left rounded px-3 py-1 mb-1 hover:bg-[#0c03031e] cursor-pointer">
-          <MdKeyboardVoice />
+          <TbMicrophone />
           <span>voice channel</span>
         </li>
       </ul>
-      <div className="bg-base-200 shadow overflow-hidden py-2 px-1 mb-1 ml-[.21rem] rounded-lg w-ful justify-between flex flex-row items-center space-x-2">
-        <div className="flex space-x-1 justify-center items-center">
-          <div className="w-10 rounded-full">
+      <div
+        onClick={displayUserInfo}
+        className="bg-base-200 shadow overflow-hidden p-1 mb-1 ml-[.21rem] rounded-lg w-ful justify-between flex flex-row items-center space-x-2"
+      >
+        <div className="flex hover:bg-base-300 hover:border-base-300 border border-base-200 bg-base-200 rounded-lg p-2 space-x-1 justify-center items-center">
+          <div className="w-10 flex justify-center border-inherit rounded-full bg-inherit">
+            <div className="absolute left-3 bottom-8 border-inherit bg-inherit border-[2px] rounded-full w-5 h-5">
+              <div
+                className={`w-4 h-4 rounded-full border-${adjustedStatus} border-[4px]`}
+              ></div>
+            </div>
             <img
-              className="rounded-full"
+              className="rounded-full w-8 h-8"
               src="https://placeimg.com/192/192/people"
             />
           </div>
@@ -56,19 +76,27 @@ const Channels = () => {
         <div className="flex space-x-1 text-2xl pr-2 select-none">
           <motion.span
             whileHover={{ scale: 1.1 }}
+            className="hover:bg-base-300 p-1 rounded-lg"
             whileTap={{ scale: 0.9 }}
             onClick={toggleVoiceMute}
           >
             {voiceMuted || soundMuted ? <TbMicrophoneOff /> : <TbMicrophone />}
           </motion.span>
           <motion.span
+            className="hover:bg-base-300 p-1 rounded-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={toggleSoundMute}
           >
             {soundMuted ? <TbHeadphonesOff /> : <TbHeadphones />}
           </motion.span>
-          <MdSettingsInputComponent />
+          <motion.span
+            className="hover:bg-base-300 p-1 rounded-lg"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <MdOutlineSettings />
+          </motion.span>
         </div>
       </div>
     </>
