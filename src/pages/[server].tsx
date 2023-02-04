@@ -138,6 +138,11 @@ const ServerNav = (props: { serverName: string | string[] }) => {
         </ul>
       </div>
       <div className="flex items-center w-52">
+        <div className="flex absolute right-4 text-base">
+          <kbd className="kbd-xs kbd select-none">ctrl</kbd>
+          <kbd className="kbd-xs kbd select-none">f</kbd>
+        </div>
+
         <input
           type="text"
           placeholder="Search"
