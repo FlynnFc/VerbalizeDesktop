@@ -50,6 +50,11 @@ span.logos > a > span {
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafb);
 }
+.transition-slow {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
 
 @media (prefers-color-scheme: dark) {
   .logo.next:hover {

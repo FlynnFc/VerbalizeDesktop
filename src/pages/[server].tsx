@@ -1,13 +1,15 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useCallback, useMemo } from "react";
 import Channels from "../components/Channels/Channels";
 import LeftChatBubble from "../components/ChatBubble/LeftChatBubble";
 import RightChatBubble from "../components/ChatBubble/RightChatBubble";
 import { AiOutlineSend } from "react-icons/ai";
 import { motion } from "framer-motion";
+import { Peer } from "peerjs";
 
 const MainPage = () => {
   const { query } = useRouter();
+
   return (
     <div className="max-w-screen overflow-hidden flex flex-col z-0">
       <ServerNav serverName={query.server} />
@@ -21,63 +23,18 @@ const MainPage = () => {
           </h2>
           <ul>
             <li>
-              <RightChatBubble />
-            </li>
-            <li>
-              <RightChatBubble />
-            </li>
-            <li>
-              <RightChatBubble />
-            </li>
-            <li>
-              <LeftChatBubble />
-            </li>
-            <li>
-              <RightChatBubble />
-            </li>
-            <li>
-              <LeftChatBubble />
-            </li>
-            <li>
-              <RightChatBubble />
-            </li>
-            <li>
-              <RightChatBubble />
-            </li>
-            <li>
-              <RightChatBubble />
-            </li>
-            <li>
-              <LeftChatBubble />
-            </li>
-            <li>
-              <RightChatBubble />
-            </li>
-            <li>
-              <LeftChatBubble />
-            </li>
-            <li>
-              <RightChatBubble />
-            </li>
-            <li>
-              <RightChatBubble />
-            </li>
-            <li>
-              <RightChatBubble />
-            </li>
-            <li>
-              <LeftChatBubble />
-            </li>
-            <li>
-              <RightChatBubble />
-            </li>
-            <li>
-              <LeftChatBubble />
+              <LeftChatBubble
+                message="You were the Chosen One!"
+                img=""
+                status="Delivered"
+                name="Me"
+                timeSent={new Date()}
+              />
             </li>
           </ul>
         </div>
         <div className="w-full">
-          <div className="w-full flex items-center bottom-4 input">
+          <div className="w-full flex items-center bg-base-100 shadow-xl bottom-4 input">
             <input
               type="text"
               placeholder="message"

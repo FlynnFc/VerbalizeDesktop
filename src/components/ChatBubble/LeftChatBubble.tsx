@@ -12,20 +12,19 @@ const LeftChatBubble = (props: messageProps) => {
   return (
     <>
       <div className="chat chat-start">
-        <div className="chat-image avatar">
+        <div className="chat-image avatar mb-1">
           <div className="w-10 rounded-full">
             <img src="https://placeimg.com/192/192/people" />
           </div>
         </div>
         <div className="chat-header">
-          Obi-Wan
+          <h4 className="inline pr-1 ">{props.name}</h4>
+
           <time className="text-xs opacity-50">12:45</time>
         </div>
-        <div className="chat-bubble">
-          You were the Chosen One! You were the Chosen One! You were the Chosen
-          One! You were the Chosen One! You were the Chosen One!
+        <div className="">
+          <p>{props.message}</p>
         </div>
-        <div className="chat-footer opacity-50">Delivered</div>
       </div>
     </>
   );

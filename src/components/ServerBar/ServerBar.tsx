@@ -35,7 +35,7 @@ const ServerBar = () => {
           <li
             onClick={handleClick}
             onContextMenu={handleClick}
-            className="btn  w-16 h-16 hover:rounded-[3rem] transition-all relative"
+            className="btn  w-16 h-16 hover:rounded-[3rem] relative transition-slow"
           >
             Test
           </li>
@@ -44,7 +44,7 @@ const ServerBar = () => {
           <li
             onClick={handleClick}
             onContextMenu={handleClick}
-            className="btn hover:rounded-[3rem] transition-all w-16 h-16 relative"
+            className="btn hover:rounded-[3rem] transition-slow w-16 h-16 relative"
           >
             Klon
           </li>

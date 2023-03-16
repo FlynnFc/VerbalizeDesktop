@@ -9,7 +9,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ServerBar />
-      <main className="mainContainer">
+      <main className="mainContainer ">
         <Component {...pageProps} />
       </main>
     </>
