@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
 import ServerBar from "../components/ServerBar/ServerBar";
 import Image from "next/image";
 import reactLogo from "../assets/react.svg";
 import tauriLogo from "../assets/tauri.svg";
 import nextLogo from "../assets/next.svg";
+import WebSocket from "tauri-plugin-websocket-api";
 
 function App() {
+  // Test WS server https://github.com/tauri-apps/plugins-workspace/blob/dev/plugins/websocket/guest-js/index.ts#L31
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
   const [test, setTest] = useState("Testing");

@@ -38,7 +38,7 @@ const MainPage = () => {
             <input
               type="text"
               placeholder="message"
-              className="bg-transparent shadow-none w-full"
+              className="bg-transparent shadow-none rounded-btn w-full"
             />
             <motion.span
               whileHover={{ scale: 1.2 }}
